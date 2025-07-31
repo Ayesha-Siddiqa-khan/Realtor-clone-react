@@ -5,7 +5,7 @@ export default function Header() {
   const location = useLocation();
   const navigate = useNavigate();
 
-  function pathMathRoute(route) {
+  function pathMatchRoute(route) {
     return route === location.pathname;
   }
 
@@ -24,31 +24,27 @@ export default function Header() {
           <ul className='flex space-x-10'>
             <li
               onClick={() => navigate('/')}
-              className={`cursor-pointer py-3 text-sm font-semibold border-b-[3px] border-b-transparent ${
-                pathMathRoute('/') ? 'text-black border-b-red-500' : 'text-gray-400'
+              className={`cursor-pointer py-3 px-2 text-sm font-semibold border-b-[3px] ${
+                pathMatchRoute('/') ? 'text-black border-b-red-500' : 'text-gray-400 border-b-transparent'
               }`}
-              onClick={() => navigate("/")}
-
             >
               Home
             </li>
 
             <li
               onClick={() => navigate('/offers')}
-              className={`cursor-pointer py-3 text-sm font-semibold border-b-[3px] border-b-transparent ${
-                pathMathRoute('/offers') ? 'text-black border-b-red-500' : 'text-gray-400'
+              className={`cursor-pointer py-3 px-2 text-sm font-semibold border-b-[3px] ${
+                pathMatchRoute('/offers') ? 'text-black border-b-red-500' : 'text-gray-400 border-b-transparent'
               }`}
-              onClick={() => navigate("/offers")}
             >
               Offers
             </li>
 
             <li
               onClick={() => navigate('/sign-in')}
-              className={`cursor-pointer py-3 text-sm font-semibold border-b-[3px] border-b-transparent ${
-                pathMathRoute('/sign-in') ? 'text-black border-b-red-500' : 'text-gray-400'
+              className={`cursor-pointer py-3 px-2 text-sm font-semibold border-b-[3px] ${
+                pathMatchRoute('/sign-in') ? 'text-black border-b-red-500' : 'text-gray-400 border-b-transparent'
               }`}
-              onClick={() => navigate("/sign-in")}
             >
               Sign in
             </li>
